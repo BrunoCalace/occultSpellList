@@ -9,8 +9,8 @@ function App() {
     <main>
       <Router>
         <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="/Repertoire" element={ <Repertoire /> } />
+          <Route path="/occultSpellList" element={ <Home /> } />
+          <Route path="/occultSpellList/Repertoire" element={ <Repertoire /> } />
           <Route path="/*" element={ <Error /> } />
         </Routes>
       </Router>
