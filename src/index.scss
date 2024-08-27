@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body, html {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(48, 33, 33);
+  }
+  
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }

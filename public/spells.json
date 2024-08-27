@@ -1,0 +1,14 @@
+[
+    {"name": "DAZE","cat": "Cantrip","act": "2","rng": "60ft","dmg": "Spell Ab. Mod.","sav": "Will","cSuc": " ","suc": " ","fail": " ","cFail": "Stun 1","height":"(+2) + 1d6"},
+    {"name": "DETECT MAGIC","cat": "Cantrip","act": "2","rng": "30ft emanation","dmg": "","sav": "","cSuc": " ","suc": " ","fail": " ","cFail": "","height":""},
+    {"name": "ELECTRIC ARC","cat": "Cantrip","act": "2","rng": "30ft","dmg": "1d4 + Spell Ab. Mod.","sav": "basic Reflex","cSuc": " ","suc": " ","fail": " ","cFail": "","height":"(+1) + 1d4"},
+    {"name": "FORBIDDING WARD","cat": "Cantrip","act": "2","rng": "30ft","dmg": " +1 status bonus to Armor Class and saving throws","sav": "","cSuc": " ","suc": " ","fail": " ","cFail": "","height":""},
+    {"name": "GUIDANCE","cat": "Cantrip","act": "1","rng": "30ft","dmg": " +1 status bonus to one attack roll, Perception check, saving throw, or skill check the target attempts before the duration end","sav": "","cSuc": " ","suc": " ","fail": " ","cFail": "","height":""},
+    {"name": "MAGE HAND","cat": "Cantrip","act": "2","rng": "30ft","dmg": "","sav": " ","cSuc": " ","suc": " ","fail": " ","cFail": " ","height":""},
+    {"name": "SHIELD","cat": "Cantrip","act": "1","rng": "","dmg": "+1 circumstance bonus to AC. Can use the Shield Block reaction with your magic shield","sav": "Hardness 5","cSuc": " ","suc": " ","fail": " ","cFail": " ","height":""},
+    {"name": "ILLUSORY DISGUISE","cat": "1st","act": "2","rng": "","dmg": "level + 4 status bonus","sav": "Deception","cSuc": " ","suc": " ","fail": " ","cFail": "","height":""},
+    {"name": "MAGIC MISSILE","cat": "1st","act": "1 c/proy","rng": "120ft","dmg": "1d4 + 1 force damage c/proy","sav": " ","cSuc": " ","suc": " ","fail": " ","cFail": " ","height":"(+2) +1 proy per act"},
+    {"name": "SOOTHE","cat": "1st", "act": "2","rng": "30ft","dmg": "1d10+4","sav": " ","cSuc": " ","suc": " ","fail": " ","cFail": " ","height":"(+1) + 1d10+4"},
+    {"name": "FALSE LIFE","cat": "2nd", "act": "2","rng": "","dmg": "HP 6 + Sp.Ab.Mod","sav": "","cSuc": "","suc": "","fail": "","cFail": "","height":"HP + 3"},
+    {"name": "TOUCH OF IDIOCY","cat": "2nd", "act": "2","rng": "touch","dmg": "","sav": "Will","cSuc": " ","suc": "unaffected","fail": "stupefied 2","cFail": "stupefied 4","height":""}
+]
