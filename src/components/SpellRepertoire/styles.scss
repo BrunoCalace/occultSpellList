@@ -1,0 +1,80 @@
+.spell-items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .spell-item {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+
+        .item-button {
+            font-size: 20px;
+            font-weight: bold;
+            color: #004400;
+            background-color: #F0EAD6;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #8A0000;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .spell-details {
+            padding: 10px;
+            margin-top: 5px;
+            border-left: 8px solid #8A0000;
+            background-color: #F0EAD6;
+            border-radius: 5px;
+
+            .spell-carac {
+                display:flex;
+                align-items: center;
+
+                strong {
+                    margin-right: 10px;
+                }
+            }
+
+            .saves {
+                margin: 10px 0;
+                border-top: 1px solid #004400;
+                border-bottom: 1px solid #004400;
+
+                .sav-result {
+                    margin-top: 5px;
+                    display:flex;
+                    align-items: center;
+
+                    strong {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            p {
+                margin: 5px 0;
+                line-height: 1.4;
+            }
+
+            .remove-button {
+                border-radius: 5px solid #8A0000;
+                margin: 5px 0;
+                padding: 10px;
+                background-color: #8A0000;
+                color: white;
+                cursor: pointer;
+                font-size: 15px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .remove-button:hover{
+                color: black;
+            }
+        }
+
+        .item-button:hover {
+            color: black;
+        }
+    }
+}

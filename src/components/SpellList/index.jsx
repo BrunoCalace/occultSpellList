@@ -1,10 +1,15 @@
 import './styles.scss'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import sRepertoire from '/src/sRepertoire.json'
 
 function SpellList() {
     const [spells, setSpells] = useState([]);
     const [expandedCategories, setExpandedCategories] = useState({});
     const [expandedItems, setExpandedItems] = useState({});
+    const [repertoire, setRepertoire] = useState(() => {
+        const savedRepertoire = localStorage.getItem('sRepertoire');
+        return savedRepertoire ? JSON.parse(savedRepertoire) : sRepertoire;
+    });
 
     useEffect(() => {
         fetch('/spells.json')
@@ -24,6 +29,16 @@ function SpellList() {
     
     const toggleItem = (index) => {
         setExpandedItems(prev => ({ ...prev, [index]: !prev[index] }));
+    };
+
+    const addSpellToRepertoire = (spell) => {
+        if (!repertoire.some(s => s.name === spell.name)) {
+            const updatedRepertoire = [...repertoire, spell];
+            setRepertoire(updatedRepertoire);
+            localStorage.setItem('sRepertoire', JSON.stringify(updatedRepertoire));
+        } else {
+            alert('Este spell ya está en el repertorio.');
+        }
     };
     
     const categorizedSpells = spells.reduce((acc, spell, index) => {
@@ -82,7 +97,7 @@ function SpellList() {
                                     <strong>Heightened: </strong><p>{spell.height}</p>
                                 </div>
                     
-                                <button className='add-button'>Agregar a Spell Repertoire</button>
+                                <button className='add-button' onClick={() => addSpellToRepertoire(spell)}>Agregar a Spell Repertoire</button>
                             </div>
                         )}
                         </li>
