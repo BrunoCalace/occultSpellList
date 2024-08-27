@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/occultSpellList" element={ <Home /> } />
           <Route path="/occultSpellList/Repertoire" element={ <Repertoire /> } />
-          <Route path="/*" element={ <Error /> } />
+          <Route path="/occultSpellList/*" element={ <Error /> } />
         </Routes>
       </Router>
     </main>

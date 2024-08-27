@@ -25,7 +25,7 @@ const Error = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/');
+      navigate('/occultSpellList');
     }, 5000);
 
     return () => clearTimeout(timer);

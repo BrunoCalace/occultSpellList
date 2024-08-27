@@ -17,8 +17,8 @@ function Navbar() {
         <nav className='navbar'>
             <div className={navClassName} ref={navRef}>
                 <ul className='nav-ul'>
-                    <Link className='li' to='/'>Spell List</Link>
-                    <Link className='li' to='/Repertoire'>Spell Repertoire</Link>
+                    <Link className='li' to='/occultSpellList'>Spell List</Link>
+                    <Link className='li' to='/occultSpellList/Repertoire'>Spell Repertoire</Link>
                     <button className='nav-btn nav-close-btn' onClick={showNavbar}>
                         <FaTimes />
                     </button>
