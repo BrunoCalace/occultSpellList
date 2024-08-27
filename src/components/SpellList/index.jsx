@@ -12,7 +12,7 @@ function SpellList() {
     });
 
     useEffect(() => {
-        fetch('/spells.json')
+        fetch('./spells.json')
             .then(response => {
                 if(!response.ok) {
                     throw new Error ('Network response was not ok');
