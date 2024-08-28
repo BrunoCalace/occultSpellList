@@ -1,5 +1,6 @@
 import './styles.scss'
 import React, { useEffect, useState } from 'react'
+import firebase from '../../firebase/firebaseConfig'
 import sRepertoire from '/src/sRepertoire.json'
 
 function SpellList() {
@@ -10,18 +11,33 @@ function SpellList() {
         const savedRepertoire = localStorage.getItem('sRepertoire');
         return savedRepertoire ? JSON.parse(savedRepertoire) : sRepertoire;
     });
+    const db = firebase.collection('/occultSpellList');
+
+    class Spells {
+        getAll() {
+            return db;
+        }
+    }
+        
 
     useEffect(() => {
-        fetch('/src/spells.json')
-            .then(response => {
-                if(!response.ok) {
-                    throw new Error ('Network response was not ok');
-                }
-                return response.json();
-        })
-        .then(data => setSpells(data))
-        .catch(error => console.error('Error fetching the data:', error));
-    }, [])
+        const getSpells = async () => {
+            try {
+                const q = query(collection(db, "items"));
+                const querySnapshot = await getDocs(q);
+                const docs = [];
+
+                querySnapshot.forEach((doc) => {
+                    docs.push({ ...doc.data(), id: doc.id });
+                });
+
+                setSpells(docs);
+            } catch (error) {
+                console.error("Error fetching data", error);
+            }
+        };
+        getSpells();
+    }, []);
 
     const toggleCategory = (category) => {
         setExpandedCategories(prev => ({ ...prev, [category]: !prev[category] }));
