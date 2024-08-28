@@ -1,8 +1,7 @@
-import firebase from 'firebase'
-import 'firebase/firestore'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-
-let config = {
+const firebaseConfig = {
   apiKey: "AIzaSyCldvVCNrCKqMT3h2QUa2W19LXQHPLlTK4",
   authDomain: "occultspelllist.firebaseapp.com",
   projectId: "occultspelllist",
@@ -11,6 +10,7 @@ let config = {
   appId: "1:425343963235:web:f70fea3a5621ed3600e856"
 };
 
-firebase.initializeApp(config);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-export default firebase.firestore();
+export default db;
