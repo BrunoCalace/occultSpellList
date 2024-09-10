@@ -52,7 +52,7 @@
             }
 
             .reduce-button {
-                background-color: #ff4d4d;
+                background-color: #8A0000;
                 color: white;
                 border: none;
                 border-radius: 5px;
@@ -67,8 +67,24 @@
             }
 
             .reduce-button:hover {
-                color: black;
+                background-color: #660000;
             }
         }
+    }
+
+    .reset-button {
+        background-color: #8A0000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .reset-button:hover {
+        background-color: #660000;
     }
 }

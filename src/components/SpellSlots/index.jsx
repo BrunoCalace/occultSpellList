@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './styles.scss';
 
 const SpellSlots = () => {
-    const [lvl, setLvl] = useState(0);
+    const [lvl, setLvl] = useState(() => {
+        const savedLvl = localStorage.getItem('characterLvl');
+        return savedLvl ? parseInt(savedLvl) : 0;
+    });
     const maxSpellLevel = 10;
 
     const calculateSlots = (spellLevel) => {
@@ -11,16 +14,24 @@ const SpellSlots = () => {
         return spellLevel === result ? (lvl % 2 === 0 ? 4 : 3) : 4;
     };
 
+    const [spellCounts, setSpellCounts] = useState(() => {
+        const savedSlots = localStorage.getItem('spellCounts');
+        return savedSlots
+            ? JSON.parse(savedSlots)
+            : Array.from({ length: maxSpellLevel }, (_, i) => calculateSlots(i + 1));
+    });
+
+    useEffect(() => {
+        localStorage.setItem('characterLvl', lvl);
+        localStorage.setItem('spellCounts', JSON.stringify(spellCounts));
+    }, [lvl, spellCounts]);
+
     const handleLvlChange = (event) => {
         const value = parseInt(event.target.value);
         if (value >= 1 && value <= 20) {
             setLvl(value);
         }
     };
-
-    const [spellCounts, setSpellCounts] = useState(
-        Array.from({ length: maxSpellLevel }, (_, i) => calculateSlots(i + 1))
-    );
 
     useEffect(() => {
         setSpellCounts(
@@ -31,6 +42,12 @@ const SpellSlots = () => {
     const handleReduceSlot = (index) => {
         setSpellCounts((prevCounts) =>
             prevCounts.map((count, i) => (i === index && count > 0 ? count - 1 : count))
+        );
+    };
+
+    const handleResetSlots = () => {
+        setSpellCounts(
+            Array.from({ length: maxSpellLevel }, (_, i) => calculateSlots(i + 1))
         );
     };
 
@@ -62,6 +79,9 @@ const SpellSlots = () => {
                     </div>
                 ))}
             </div>
+            <button className="reset-button" onClick={handleResetSlots}>
+                Reset Spell Slots
+            </button>
         </div>
     )
 }
